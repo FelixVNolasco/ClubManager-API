@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using ManagerAPI.Dtos;
 using ManagerAPI.Entities;
 using ManagerAPI.Common;
+using ManagerAPI.Repositories;
 
 namespace ManagerAPI.Controllers
 {
@@ -15,20 +16,21 @@ namespace ManagerAPI.Controllers
     public class StudentController : ControllerBase
     {
 
-        private readonly IRepository<Student> studentsRepository;
+        private readonly StudentRepository studentsRepository;
 
         public StudentController(IRepository<Student> studentsRepository)
         {
-            this.studentsRepository = studentsRepository;
+            this.studentsRepository = (StudentRepository)studentsRepository;
         }
+
+        
 
         [HttpGet]
         public async Task<ActionResult<IEnumerable<StudentDto>>> GetAsync()
         {
 
             var students = (await studentsRepository.GetAllSync())
-                        .Select(student => student.AsDto());
-
+                        .Select(student => student.AsDto());            
             return Ok(students);
         }
 
@@ -46,17 +48,16 @@ namespace ManagerAPI.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult> PostAsync(StudentDto studentDto)
+        public async Task<ActionResult> PostAsync(CreateStudentDto createStudentDto)
         {
             var student = new Student
             {
-                StudentId = studentDto.StudentId,
-                firstName = studentDto.firstName,
-                lastName = studentDto.lastName,
-                email = studentDto.email,
-                career = studentDto.career,
-                school = studentDto.school,
-                signedUp = studentDto.signedUp,
+                firstName = createStudentDto.firstName,
+                lastName = createStudentDto.lastName,
+                email = createStudentDto.email,
+                career = createStudentDto.career,
+                school = createStudentDto.school,
+                signedUp = createStudentDto.signedUp,
             };
 
             await studentsRepository.CreateAsync(student);

@@ -9,9 +9,7 @@ namespace ManagerAPI.Common
     {
         Task CreateAsync(T entity);
         Task<IReadOnlyCollection<T>> GetAllSync();
-        Task<IReadOnlyCollection<T>> GetAllSync(Expression<Func<T, bool>> filter);
         Task<T> GetAsync(Guid id);
-        Task<T> GetAsync(Expression<Func<T, bool>> filter);
         Task RemoveAsync(Guid id);
         Task UpdateAsync(T entity);
     }

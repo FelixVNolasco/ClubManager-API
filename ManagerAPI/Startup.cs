@@ -12,6 +12,10 @@ using System.Linq;
 using System.Threading.Tasks;
 using ManagerAPI.Clients;
 using ManagerAPI.Entities;
+using ManagerAPI.Context;
+using Microsoft.EntityFrameworkCore;
+using ManagerAPI.Common;
+using ManagerAPI.Repositories;
 
 namespace ManagerAPI
 {
@@ -27,10 +31,13 @@ namespace ManagerAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContextPool<AppDBContext>(options => options.UseSqlServer(Configuration.GetConnectionString("StudentsDBConnection")));
             services.AddHttpClient<Student>(client =>
             {
                 client.BaseAddress = new Uri("https://localhost:5001");
             });
+
+            services.AddScoped<IRepository<Student>, StudentRepository>();
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
