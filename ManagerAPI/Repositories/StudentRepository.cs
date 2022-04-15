@@ -16,28 +16,24 @@ namespace ManagerAPI.Repositories
         {
             this.context = context;
         }
-        public Task CreateAsync(Student student)
+        public Student CreateStudent(Student student)
         {
             context.students.Add(student);
             context.SaveChanges();
-            //return student;
-            return Task.CompletedTask;
+            return student;
         }
 
-        public Task<IReadOnlyCollection<Student>> GetAllSync()
+        public IEnumerable<Student> GetAllStudents()
         {
-            //return context.students;
-            throw new NotImplementedException();
+            return context.students;
         }
 
-        public Task<Student> GetAsync(Guid id)
+        public Student GetStudent(Guid id)
         {
-            //return context.students.FindAsync(id);
-            throw new NotImplementedException();
+            return context.students.Find(id);
         }
 
-
-        public Task RemoveAsync(Guid id)
+        public Student RemoveStudent(Guid id)
         {
             Student student = context.students.Find(id);
             if (student == null)
@@ -45,18 +41,15 @@ namespace ManagerAPI.Repositories
                 context.students.Remove(student);
                 context.SaveChanges();
             }
-            return Task.CompletedTask;
-            //return student;
+            return student;
         }
 
-        public Task UpdateAsync(Student studentChanges)
+        public Student UpdateStudent(Student studentChanges)
         {
-
             var student = context.students.Attach(studentChanges);
             student.State = Microsoft.EntityFrameworkCore.EntityState.Modified;
             context.SaveChanges();
-            //return studentChanges;
-            throw new NotImplementedException();
+            return studentChanges;
         }
     }
 }

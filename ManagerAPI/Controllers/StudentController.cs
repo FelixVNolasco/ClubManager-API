@@ -9,6 +9,8 @@ using ManagerAPI.Entities;
 using ManagerAPI.Common;
 using ManagerAPI.Repositories;
 
+
+//FIX: System.InvalidCastException: Unable to cast object of type 'System.String' to type 'System.Guid'.
 namespace ManagerAPI.Controllers
 {
     [ApiController]
@@ -22,33 +24,30 @@ namespace ManagerAPI.Controllers
         {
             this.studentsRepository = (StudentRepository)studentsRepository;
         }
-
         
-
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<StudentDto>>> GetAsync()
+        public IEnumerable<StudentDto> GetAllStudents()
         {
-
-            var students = (await studentsRepository.GetAllSync())
-                        .Select(student => student.AsDto());            
-            return Ok(students);
+            var students = studentsRepository.GetAllStudents()
+                        .Select(student => student.AsDto());
+            return students;
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<StudentDto>> GetByIdAsync(Guid id)
+        public StudentDto GetStudent(Guid id)
         {
-            var item = await studentsRepository.GetAsync(id);
+            var item =  studentsRepository.GetStudent(id);
 
-            if (item == null)
-            {
-                return NotFound();
-            }
+            //if (item == null)
+            //{
+            //    return item;
+            //}
 
             return item.AsDto();
         }
 
         [HttpPost]
-        public async Task<ActionResult> PostAsync(CreateStudentDto createStudentDto)
+        public StudentDto CreateStudent(CreateStudentDto createStudentDto)
         {
             var student = new Student
             {
@@ -60,45 +59,43 @@ namespace ManagerAPI.Controllers
                 signedUp = createStudentDto.signedUp,
             };
 
-            await studentsRepository.CreateAsync(student);
-
-            return CreatedAtAction(nameof(GetByIdAsync), new { id = student.StudentId }, student);
-
+            studentsRepository.CreateStudent(student);
+            return student.AsDto();
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutAsync(Guid id, UpdateStudentDto updateStudentDto)
+        public StudentDto UpdateStudent(Guid id, UpdateStudentDto updateStudentDto)
         {
-            var existingItem = await studentsRepository.GetAsync(id);
+            var existingItem = studentsRepository.GetStudent(id);
 
-            if (existingItem == null)
-            {
-                return NotFound();
-            }
+            //if (existingItem == null)
+            //{
+            //    return NotFound();
+            //}
 
             existingItem.firstName= updateStudentDto.firstName;
             existingItem.lastName= updateStudentDto.lastName;
             existingItem.email= updateStudentDto.email;
 
-            await studentsRepository.UpdateAsync(existingItem);
+            studentsRepository.UpdateStudent(existingItem);
 
-            return NoContent();
+            return existingItem.AsDto();
         }
 
 
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteAsync(Guid id)
+        public Student DeleteAsync(Guid id)
         {
-            var item = await studentsRepository.GetAsync(id);
+            var student = studentsRepository.GetStudent(id);
 
-            if (item == null)
-            {
-                return NotFound();
-            }
+            //if (item == null)
+            //{
+            //    return NotFound();
+            //}
 
-            await studentsRepository.RemoveAsync(item.StudentId);
+            studentsRepository.RemoveStudent(student.StudentId);
 
-            return NoContent();
+            return student;
         }
 
     }
