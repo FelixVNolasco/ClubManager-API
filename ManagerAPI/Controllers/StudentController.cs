@@ -34,7 +34,7 @@ namespace ManagerAPI.Controllers
         }
 
         [HttpGet("{id}")]
-        public StudentDto GetStudent(Guid id)
+        public StudentDto GetStudent(int id)
         {
             var item =  studentsRepository.GetStudent(id);
 
@@ -64,7 +64,7 @@ namespace ManagerAPI.Controllers
         }
 
         [HttpPut("{id}")]
-        public StudentDto UpdateStudent(Guid id, UpdateStudentDto updateStudentDto)
+        public StudentDto UpdateStudent(int id, UpdateStudentDto updateStudentDto)
         {
             var existingItem = studentsRepository.GetStudent(id);
 
@@ -84,7 +84,7 @@ namespace ManagerAPI.Controllers
 
 
         [HttpDelete("{id}")]
-        public Student DeleteAsync(Guid id)
+        public Student DeleteAsync(int id)
         {
             var student = studentsRepository.GetStudent(id);
 

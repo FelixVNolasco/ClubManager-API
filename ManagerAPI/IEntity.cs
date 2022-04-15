@@ -4,6 +4,6 @@ namespace ManagerAPI.Common
 {
     public class IEntity
     {
-        Guid StudentId { get; set; }
+        int StudentId { get; set; }
     }
 }

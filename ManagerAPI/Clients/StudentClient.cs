@@ -15,8 +15,7 @@ namespace ManagerAPI.Clients
             this.httpClient = httpClient;
         }
 
-
-        public async Task<IReadOnlyCollection<StudentDto>> GetCatalogItemsAsync()
+        public async Task<IReadOnlyCollection<StudentDto>> GetStudentDtosAsync()
         {
             var students = await httpClient.GetFromJsonAsync<IReadOnlyCollection<StudentDto>>("/students");
             return students;

@@ -28,15 +28,15 @@ namespace ManagerAPI.Repositories
             return context.students;
         }
 
-        public Student GetStudent(Guid id)
+        public Student GetStudent(int id)
         {
             return context.students.Find(id);
         }
 
-        public Student RemoveStudent(Guid id)
+        public Student RemoveStudent(int id)
         {
             Student student = context.students.Find(id);
-            if (student == null)
+            if (student != null)
             {
                 context.students.Remove(student);
                 context.SaveChanges();

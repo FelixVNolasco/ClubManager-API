@@ -10,8 +10,8 @@ namespace ManagerAPI.Common
     {
         Student CreateStudent(T entity);
         IEnumerable<Student> GetAllStudents();
-        Student GetStudent(Guid id);
-        Student RemoveStudent(Guid id);
+        Student GetStudent(int id);
+        Student RemoveStudent(int id);
         Student UpdateStudent(T entity);
     }
 }
