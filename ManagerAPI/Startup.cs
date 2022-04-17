@@ -21,6 +21,8 @@ namespace ManagerAPI
 {
     public class Startup
     {
+
+        private const string AllowedOriginSettings = "AllowedOrigin";
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -54,6 +56,13 @@ namespace ManagerAPI
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "ManagerAPI v1"));
+
+                app.UseCors(builder =>
+                {
+                    builder.WithOrigins(Configuration[AllowedOriginSettings])
+                    .AllowAnyHeader()
+                    .AllowAnyMethod();
+                });
             }
 
             app.UseRouting();

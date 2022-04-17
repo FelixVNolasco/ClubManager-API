@@ -1,0 +1,12 @@
+C:\academia\ManagerAPI\ManagerEntities\bin\Debug\net5.0\ManagerEntities.deps.json
+C:\academia\ManagerAPI\ManagerEntities\bin\Debug\net5.0\ManagerEntities.dll
+C:\academia\ManagerAPI\ManagerEntities\bin\Debug\net5.0\ManagerEntities.pdb
+C:\academia\ManagerAPI\ManagerEntities\obj\Debug\net5.0\ManagerEntities.csproj.AssemblyReference.cache
+C:\academia\ManagerAPI\ManagerEntities\obj\Debug\net5.0\ManagerEntities.GeneratedMSBuildEditorConfig.editorconfig
+C:\academia\ManagerAPI\ManagerEntities\obj\Debug\net5.0\ManagerEntities.AssemblyInfoInputs.cache
+C:\academia\ManagerAPI\ManagerEntities\obj\Debug\net5.0\ManagerEntities.AssemblyInfo.cs
+C:\academia\ManagerAPI\ManagerEntities\obj\Debug\net5.0\ManagerEntities.csproj.CoreCompileInputs.cache
+C:\academia\ManagerAPI\ManagerEntities\obj\Debug\net5.0\ManagerEntities.dll
+C:\academia\ManagerAPI\ManagerEntities\obj\Debug\net5.0\refint\ManagerEntities.dll
+C:\academia\ManagerAPI\ManagerEntities\obj\Debug\net5.0\ManagerEntities.pdb
+C:\academia\ManagerAPI\ManagerEntities\obj\Debug\net5.0\ref\ManagerEntities.dll

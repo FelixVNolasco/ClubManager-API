@@ -51,6 +51,7 @@ namespace ManagerAPI.Controllers
         {
             var student = new Student
             {
+                boleta = createStudentDto.boleta,
                 firstName = createStudentDto.firstName,
                 lastName = createStudentDto.lastName,
                 email = createStudentDto.email,
@@ -73,6 +74,7 @@ namespace ManagerAPI.Controllers
             //    return NotFound();
             //}
 
+            existingItem.boleta = updateStudentDto.boleta;
             existingItem.firstName= updateStudentDto.firstName;
             existingItem.lastName= updateStudentDto.lastName;
             existingItem.email= updateStudentDto.email;

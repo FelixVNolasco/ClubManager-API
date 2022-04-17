@@ -10,7 +10,6 @@ namespace ManagerAPI.Context
         {
 
         }
-
         public DbSet<Student> students { get; set; }
     }
 }

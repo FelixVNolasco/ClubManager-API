@@ -1,0 +1,15 @@
+C:\academia\ManagerAPI\DAManager\bin\Debug\net5.0\DAManager.deps.json
+C:\academia\ManagerAPI\DAManager\bin\Debug\net5.0\DAManager.dll
+C:\academia\ManagerAPI\DAManager\bin\Debug\net5.0\DAManager.pdb
+C:\academia\ManagerAPI\DAManager\bin\Debug\net5.0\ManagerEntities.dll
+C:\academia\ManagerAPI\DAManager\bin\Debug\net5.0\ManagerEntities.pdb
+C:\academia\ManagerAPI\DAManager\obj\Debug\net5.0\DAManager.csproj.AssemblyReference.cache
+C:\academia\ManagerAPI\DAManager\obj\Debug\net5.0\DAManager.GeneratedMSBuildEditorConfig.editorconfig
+C:\academia\ManagerAPI\DAManager\obj\Debug\net5.0\DAManager.AssemblyInfoInputs.cache
+C:\academia\ManagerAPI\DAManager\obj\Debug\net5.0\DAManager.AssemblyInfo.cs
+C:\academia\ManagerAPI\DAManager\obj\Debug\net5.0\DAManager.csproj.CoreCompileInputs.cache
+C:\academia\ManagerAPI\DAManager\obj\Debug\net5.0\DAManager.csproj.CopyComplete
+C:\academia\ManagerAPI\DAManager\obj\Debug\net5.0\DAManager.dll
+C:\academia\ManagerAPI\DAManager\obj\Debug\net5.0\refint\DAManager.dll
+C:\academia\ManagerAPI\DAManager\obj\Debug\net5.0\DAManager.pdb
+C:\academia\ManagerAPI\DAManager\obj\Debug\net5.0\ref\DAManager.dll
