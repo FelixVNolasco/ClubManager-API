@@ -1,16 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using ManagerAPI.Dtos;
-using ManagerAPI.Entities;
-using ManagerAPI.Common;
-using ManagerAPI.Repositories;
+using ManagerEntities.Entities;
+using ManagerEntities.Common;
+using DAManager.Repositories;
 
-
-//FIX: System.InvalidCastException: Unable to cast object of type 'System.String' to type 'System.Guid'.
 namespace ManagerAPI.Controllers
 {
     [ApiController]
@@ -24,7 +19,7 @@ namespace ManagerAPI.Controllers
         {
             this.studentsRepository = (StudentRepository)studentsRepository;
         }
-        
+
         [HttpGet]
         public IEnumerable<StudentDto> GetAllStudents()
         {
@@ -36,7 +31,7 @@ namespace ManagerAPI.Controllers
         [HttpGet("{id}")]
         public StudentDto GetStudent(int id)
         {
-            var item =  studentsRepository.GetStudent(id);
+            var item = studentsRepository.GetStudent(id);
 
             //if (item == null)
             //{
@@ -75,9 +70,9 @@ namespace ManagerAPI.Controllers
             //}
 
             existingItem.boleta = updateStudentDto.boleta;
-            existingItem.firstName= updateStudentDto.firstName;
-            existingItem.lastName= updateStudentDto.lastName;
-            existingItem.email= updateStudentDto.email;
+            existingItem.firstName = updateStudentDto.firstName;
+            existingItem.lastName = updateStudentDto.lastName;
+            existingItem.email = updateStudentDto.email;
 
             studentsRepository.UpdateStudent(existingItem);
 

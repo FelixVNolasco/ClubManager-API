@@ -1,5 +1,4 @@
-﻿
-namespace ManagerEntities.Common
+﻿namespace ManagerEntities.Common
 {
     public class IEntity
     {

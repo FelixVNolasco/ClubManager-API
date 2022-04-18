@@ -1,5 +1,5 @@
 ﻿using ManagerAPI.Dtos;
-using ManagerAPI.Entities;
+using ManagerEntities.Entities;
 
 namespace ManagerAPI
 {

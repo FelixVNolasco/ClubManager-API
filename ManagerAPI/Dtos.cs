@@ -1,5 +1,4 @@
-﻿using System;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace ManagerAPI.Dtos
 {
@@ -7,5 +6,5 @@ namespace ManagerAPI.Dtos
 
     public record CreateStudentDto([Required] string firstName, string boleta, string lastName, string email, string career, string school, bool signedUp);
 
-    public record UpdateStudentDto([Required]string firstName, string boleta, string lastName, string email);
+    public record UpdateStudentDto([Required] string firstName, string boleta, string lastName, string email);
 }

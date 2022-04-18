@@ -10,12 +10,16 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using ManagerAPI.Clients;
-using ManagerAPI.Entities;
-using ManagerAPI.Context;
+
 using Microsoft.EntityFrameworkCore;
-using ManagerAPI.Common;
-using ManagerAPI.Repositories;
+
+using ManagerEntities.Entities;
+using ManagerEntities.Common;
+
+using DAManager.Context;
+using DAManager.Repositories;
+
+
 
 namespace ManagerAPI
 {

@@ -1,9 +1,7 @@
-﻿
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using DAManager.Context;
 using ManagerEntities.Common;
 using ManagerEntities.Entities;
-
 
 namespace DAManager.Repositories
 {

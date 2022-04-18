@@ -1555,6 +1555,30 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
+      },
+      "DAManager/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "ManagerEntities": "1.0.0",
+          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.2"
+        },
+        "compile": {
+          "bin/placeholder/DAManager.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DAManager.dll": {}
+        }
+      },
+      "ManagerEntities/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/ManagerEntities.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ManagerEntities.dll": {}
+        }
       }
     }
   },
@@ -5874,10 +5898,22 @@
         "system.xml.xmlserializer.4.3.0.nupkg.sha512",
         "system.xml.xmlserializer.nuspec"
       ]
+    },
+    "DAManager/1.0.0": {
+      "type": "project",
+      "path": "../DAManager/DAManager.csproj",
+      "msbuildProject": "../DAManager/DAManager.csproj"
+    },
+    "ManagerEntities/1.0.0": {
+      "type": "project",
+      "path": "../ManagerEntities/ManagerEntities.csproj",
+      "msbuildProject": "../ManagerEntities/ManagerEntities.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net5.0": [
+      "DAManager >= 1.0.0",
+      "ManagerEntities >= 1.0.0",
       "Microsoft.EntityFrameworkCore.SqlServer >= 5.0.4",
       "Swashbuckle.AspNetCore >= 5.6.3"
     ]
@@ -5909,7 +5945,14 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\academia\\ManagerAPI\\DAManager\\DAManager.csproj": {
+              "projectPath": "C:\\academia\\ManagerAPI\\DAManager\\DAManager.csproj"
+            },
+            "C:\\academia\\ManagerAPI\\ManagerEntities\\ManagerEntities.csproj": {
+              "projectPath": "C:\\academia\\ManagerAPI\\ManagerEntities\\ManagerEntities.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
