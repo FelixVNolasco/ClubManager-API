@@ -1556,28 +1556,25 @@
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
       },
-      "DAManager/1.0.0": {
+      "DataAccessManager/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
-          "ManagerEntities": "1.0.0",
-          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.2"
+          "Entities": "1.0.0"
         },
         "compile": {
-          "bin/placeholder/DAManager.dll": {}
+          "bin/placeholder/DataAccessManager.dll": {}
         },
         "runtime": {
-          "bin/placeholder/DAManager.dll": {}
+          "bin/placeholder/DataAccessManager.dll": {}
         }
       },
-      "ManagerEntities/1.0.0": {
+      "Entities/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v5.0",
         "compile": {
-          "bin/placeholder/ManagerEntities.dll": {}
+          "bin/placeholder/Entities.dll": {}
         },
         "runtime": {
-          "bin/placeholder/ManagerEntities.dll": {}
+          "bin/placeholder/Entities.dll": {}
         }
       }
     }
@@ -5899,21 +5896,21 @@
         "system.xml.xmlserializer.nuspec"
       ]
     },
-    "DAManager/1.0.0": {
+    "DataAccessManager/1.0.0": {
       "type": "project",
-      "path": "../DAManager/DAManager.csproj",
-      "msbuildProject": "../DAManager/DAManager.csproj"
+      "path": "../ejemploProyecto/DataAccessManager.csproj",
+      "msbuildProject": "../ejemploProyecto/DataAccessManager.csproj"
     },
-    "ManagerEntities/1.0.0": {
+    "Entities/1.0.0": {
       "type": "project",
-      "path": "../ManagerEntities/ManagerEntities.csproj",
-      "msbuildProject": "../ManagerEntities/ManagerEntities.csproj"
+      "path": "../Entities/Entities.csproj",
+      "msbuildProject": "../Entities/Entities.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net5.0": [
-      "DAManager >= 1.0.0",
-      "ManagerEntities >= 1.0.0",
+      "DataAccessManager >= 1.0.0",
+      "Entities >= 1.0.0",
       "Microsoft.EntityFrameworkCore.SqlServer >= 5.0.4",
       "Swashbuckle.AspNetCore >= 5.6.3"
     ]
@@ -5946,11 +5943,11 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\academia\\ManagerAPI\\DAManager\\DAManager.csproj": {
-              "projectPath": "C:\\academia\\ManagerAPI\\DAManager\\DAManager.csproj"
+            "C:\\academia\\ManagerAPI\\ejemploProyecto\\DataAccessManager.csproj": {
+              "projectPath": "C:\\academia\\ManagerAPI\\ejemploProyecto\\DataAccessManager.csproj"
             },
-            "C:\\academia\\ManagerAPI\\ManagerEntities\\ManagerEntities.csproj": {
-              "projectPath": "C:\\academia\\ManagerAPI\\ManagerEntities\\ManagerEntities.csproj"
+            "C:\\academia\\ManagerAPI\\Entities\\Entities.csproj": {
+              "projectPath": "C:\\academia\\ManagerAPI\\Entities\\Entities.csproj"
             }
           }
         }

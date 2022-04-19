@@ -1481,16 +1481,6 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
-      },
-      "ManagerEntities/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v5.0",
-        "compile": {
-          "bin/placeholder/ManagerEntities.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/ManagerEntities.dll": {}
-        }
       }
     }
   },
@@ -5703,16 +5693,10 @@
         "system.xml.xmlserializer.4.3.0.nupkg.sha512",
         "system.xml.xmlserializer.nuspec"
       ]
-    },
-    "ManagerEntities/1.0.0": {
-      "type": "project",
-      "path": "../ManagerEntities/ManagerEntities.csproj",
-      "msbuildProject": "../ManagerEntities/ManagerEntities.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net5.0": [
-      "ManagerEntities >= 1.0.0",
       "Microsoft.EntityFrameworkCore.SqlServer >= 5.0.2"
     ]
   },
@@ -5743,11 +5727,7 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
-          "projectReferences": {
-            "C:\\academia\\ManagerAPI\\ManagerEntities\\ManagerEntities.csproj": {
-              "projectPath": "C:\\academia\\ManagerAPI\\ManagerEntities\\ManagerEntities.csproj"
-            }
-          }
+          "projectReferences": {}
         }
       },
       "warningProperties": {

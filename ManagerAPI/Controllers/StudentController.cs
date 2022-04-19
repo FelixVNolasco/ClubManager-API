@@ -2,9 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using ManagerAPI.Dtos;
-using ManagerEntities.Entities;
-using ManagerEntities.Common;
-using DAManager.Repositories;
+using Entities.Entities;
+using Entities.Common;
+using DataAccessManager.Repositories;
+//using ManagerEntities.Entities;
+//using ManagerEntities.Common;
+//using DAManager.Repositories;
 
 namespace ManagerAPI.Controllers
 {

@@ -13,11 +13,17 @@ using System.Threading.Tasks;
 
 using Microsoft.EntityFrameworkCore;
 
-using ManagerEntities.Entities;
-using ManagerEntities.Common;
+//using ManagerEntities.Entities;
+//using ManagerEntities.Common;
 
-using DAManager.Context;
-using DAManager.Repositories;
+//using DAManager.Context;
+//using DAManager.Repositories;
+
+using Entities.Entities;
+using Entities.Common;
+
+using DataAccessManager.Context;
+using DataAccessManager.Repositories;
 
 
 

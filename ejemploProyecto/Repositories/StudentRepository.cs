@@ -3,7 +3,7 @@ using DataAccessManager.Context;
 using Entities.Entities;
 using Entities.Common;
 
-namespace ejemploProyecto.Repositories
+namespace DataAccessManager.Repositories
 {
     public class StudentRepository : IRepository<Student>
     {

@@ -1,0 +1,6 @@
+C:\academia\ManagerAPI\Entities\bin\Debug\Entities.dll
+C:\academia\ManagerAPI\Entities\bin\Debug\Entities.pdb
+C:\academia\ManagerAPI\Entities\obj\Debug\Entities.csproj.AssemblyReference.cache
+C:\academia\ManagerAPI\Entities\obj\Debug\Entities.csproj.CoreCompileInputs.cache
+C:\academia\ManagerAPI\Entities\obj\Debug\Entities.dll
+C:\academia\ManagerAPI\Entities\obj\Debug\Entities.pdb
