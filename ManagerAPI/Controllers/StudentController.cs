@@ -5,9 +5,7 @@ using ManagerAPI.Dtos;
 using Entities.Entities;
 using Entities.Common;
 using DataAccessManager.Repositories;
-//using ManagerEntities.Entities;
-//using ManagerEntities.Common;
-//using DAManager.Repositories;
+using DataAccessManager.Context;
 
 namespace ManagerAPI.Controllers
 {
@@ -18,9 +16,12 @@ namespace ManagerAPI.Controllers
 
         private readonly StudentRepository studentsRepository;
 
-        public StudentController(IRepository<Student> studentsRepository)
+        private readonly AppDBContext context;
+
+        public StudentController(IRepository<Student> studentsRepository, AppDBContext context)
         {
             this.studentsRepository = (StudentRepository)studentsRepository;
+            this.context = context;
         }
 
         [HttpGet]
@@ -32,20 +33,20 @@ namespace ManagerAPI.Controllers
         }
 
         [HttpGet("{id}")]
-        public StudentDto GetStudent(int id)
+        public ActionResult<StudentDto> GetStudent(int id)
         {
             var item = studentsRepository.GetStudent(id);
 
-            //if (item == null)
-            //{
-            //    return item;
-            //}
+            if (item == null)
+            {
+                return NotFound();
+            }
 
             return item.AsDto();
         }
 
         [HttpPost]
-        public StudentDto CreateStudent(CreateStudentDto createStudentDto)
+        public ActionResult<StudentDto> CreateStudent(CreateStudentDto createStudentDto)
         {
             var student = new Student
             {
@@ -58,19 +59,27 @@ namespace ManagerAPI.Controllers
                 signedUp = createStudentDto.signedUp,
             };
 
-            studentsRepository.CreateStudent(student);
-            return student.AsDto();
+            var existingStudentCount = context.students.Count(a => a.boleta == createStudentDto.boleta);
+            if (existingStudentCount == 0)
+            {
+                studentsRepository.CreateStudent(student);
+                return student.AsDto();
+            } else
+            {
+                return NotFound();
+            }
+            
         }
 
         [HttpPut("{id}")]
-        public StudentDto UpdateStudent(int id, UpdateStudentDto updateStudentDto)
+        public ActionResult<StudentDto> UpdateStudent(int id, UpdateStudentDto updateStudentDto)
         {
             var existingItem = studentsRepository.GetStudent(id);
 
-            //if (existingItem == null)
-            //{
-            //    return NotFound();
-            //}
+            if (existingItem == null)
+            {
+                return NotFound();
+            }
 
             existingItem.boleta = updateStudentDto.boleta;
             existingItem.firstName = updateStudentDto.firstName;
@@ -84,18 +93,18 @@ namespace ManagerAPI.Controllers
 
 
         [HttpDelete("{id}")]
-        public Student DeleteAsync(int id)
+        public ActionResult<StudentDto> DeleteAsync(int id)
         {
             var student = studentsRepository.GetStudent(id);
 
-            //if (item == null)
-            //{
-            //    return NotFound();
-            //}
+            if (student == null)
+            {
+                return NotFound();
+            }
 
             studentsRepository.RemoveStudent(student.StudentId);
 
-            return student;
+            return student.AsDto();
         }
 
     }
